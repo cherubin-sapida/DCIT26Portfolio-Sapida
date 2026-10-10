@@ -88,10 +88,9 @@
                 <div class="record-card">
 
                     <div class="record-image">
-
-                        <img src="exam1.jpg"
-                             alt="Midterm Examination">
-
+                        <img src="midterm.jpg"
+                            alt="Midterm Examination"
+                            onclick="openImage(event)">
                     </div>
 
 
@@ -106,7 +105,7 @@
                         </h3>
 
                         <p class="record-date">
-                            📅 
+                            📅October 6, 2026 
                         </p>
 
 
@@ -117,7 +116,7 @@
                             </small>
 
                             <strong>
-                                
+                                69/70
                             </strong>
 
                         </div>
@@ -131,6 +130,45 @@
         </section>
 
     </main>
+```html
+<!-- IMAGE POPUP -->
+<div id="imagePopup"
+     style="display:none; position:fixed; inset:0;
+     background:rgba(0,0,0,0.85); z-index:99999;
+     justify-content:center; align-items:center;
+     padding:20px; box-sizing:border-box;"
+     onclick="closeImage()">
+
+    <button type="button"
+        onclick="event.stopPropagation(); closeImage();"
+        style="position:absolute; top:15px; right:25px;
+        color:white; font-size:38px; background:none;
+        border:none; cursor:pointer;">
+        &times;
+    </button>
+
+    <img id="popupImage" src=""
+         alt="Enlarged examination image"
+         style="max-width:95%; max-height:90%;
+         object-fit:contain;"
+         onclick="event.stopPropagation();">
+</div>
+
+<script>
+function openImage(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    document.getElementById("popupImage").src =
+        event.currentTarget.src;
+
+    document.getElementById("imagePopup").style.display = "flex";
+}
+
+function closeImage() {
+    document.getElementById("imagePopup").style.display = "none";
+}
+</script>
 
 </body>
 
