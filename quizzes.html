@@ -80,12 +80,12 @@
 
                 <div class="record-card">
 
-                    <div class="record-image">
-
-                        <img src="quiz1.jpg.jfif"
-                             alt="Quiz 1">
-
-                    </div>
+                    
+                <div class="record-image">
+                    <img src="quiz1.jpg"
+                        alt="Quiz 1"
+                        onclick="openImage(this.src)">
+                </div>
 
 
                     <div class="record-info">
@@ -114,15 +114,198 @@
 
                         </div>
 
+
                     </div>
+
+                
 
                 </div>
 
             </div>
 
+            <div class="record-grid">
+
+
+                <!-- QUIZ 2 -->
+
+                <div class="record-card">
+
+                    <div class="record-image">
+                        <img src="quiz2.jpg"
+                        alt="Quiz 2"
+                        onclick="openImage(this.src)">
+                    </div>
+
+
+                    <div class="record-info">
+
+                        <span class="record-tag">
+                            QUIZ
+                        </span>
+
+                        <h3>
+                            Quiz 2
+                        </h3>
+
+                        <p class="record-date">
+                            📅 October 6, 2026
+                        </p>
+
+                        <div class="score-row">
+
+                            <small>
+                                Score
+                            </small>
+
+                            <strong>
+                                20/20
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+                
+
+                </div>
+
+            </div>
+
+            <div class="record-grid">
+
+
+                <!-- QUIZ 3 -->
+
+                <div class="record-card">
+
+                    <div class="record-image">
+                        <img src="quiz3.jpg"
+                        alt="Quiz 3"
+                        onclick="openImage(this.src)">
+                    </div>
+
+
+                    <div class="record-info">
+
+                        <span class="record-tag">
+                            QUIZ
+                        </span>
+
+                        <h3>
+                            Quiz 3
+                        </h3>
+
+                        <p class="record-date">
+                            📅 October 6, 2026
+                        </p>
+
+                        <div class="score-row">
+
+                            <small>
+                                Score
+                            </small>
+
+                            <strong>
+                                20/20
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+                
+
+                </div>
+
+            </div>
+
+            <div class="record-grid">
+
+
+                <!-- LONG QUIZ -->
+
+                <div class="record-card">
+
+                    <div class="record-image">
+                        <img src="longquiz.jpg"
+                        alt="Long Quiz"
+                        onclick="openImage(this.src)">
+                    </div>
+
+
+                    <div class="record-info">
+
+                        <span class="record-tag">
+                            QUIZ
+                        </span>
+
+                        <h3>
+                            Long Quiz
+                        </h3>
+
+                        <p class="record-date">
+                            📅 October 6, 2026
+                        </p>
+
+                        <div class="score-row">
+
+                            <small>
+                                Score
+                            </small>
+
+                            <strong>
+                                45/45
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+                
+
+                </div>
+
+            </div>
+
+
         </section>
 
     </main>
+
+<!-- IMAGE POPUP -->
+<div id="imagePopup"
+     onclick="closeImage()"
+     style="display:none; position:fixed; inset:0;
+            background:rgba(0,0,0,0.85);
+            justify-content:center; align-items:center;
+            z-index:9999; cursor:pointer; padding:20px;">
+
+    <span style="position:absolute; top:20px; right:30px;
+                 color:white; font-size:40px;">
+        &times;
+    </span>
+
+    <img id="popupImage"
+         src=""
+         alt="Enlarged quiz image"
+         style="max-width:95%; max-height:90%;
+                object-fit:contain;">
+
+</div>
+
+<script>
+    function openImage(src) {
+        document.getElementById("popupImage").src = src;
+        document.getElementById("imagePopup").style.display = "flex";
+    }
+
+    function closeImage() {
+        document.getElementById("imagePopup").style.display = "none";
+    }
+</script>
 
 </body>
 
